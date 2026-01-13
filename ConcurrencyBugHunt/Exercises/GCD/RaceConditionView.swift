@@ -54,6 +54,7 @@ struct RaceConditionView: View {
     @State private var cart = ShoppingCart()
     @State private var resultMessage = "Tap 'Run Test' to simulate concurrent cart operations"
     @State private var isRunning = false
+    @State private var operationCount: Double = 10
 
     let products = [
         ("iPhone", 999.0),
@@ -62,6 +63,10 @@ struct RaceConditionView: View {
         ("iPad", 799.0),
         ("Apple Watch", 399.0)
     ]
+
+    private var addCount: Int { Int(operationCount) }
+    private var removeCount: Int { Int(operationCount) / 2 }
+    private var expectedCount: Int { addCount - removeCount }
 
     var body: some View {
         VStack(spacing: 20) {
@@ -76,6 +81,16 @@ struct RaceConditionView: View {
                 .background(Color.gray.opacity(0.1))
                 .cornerRadius(8)
 
+            VStack(spacing: 8) {
+                Text("Concurrent Operations: \(addCount)")
+                    .font(.subheadline)
+                Slider(value: $operationCount, in: 2...100, step: 2)
+                Text("Low values = wrong counts. High values = crashes.")
+                    .font(.caption2)
+                    .foregroundColor(.secondary)
+            }
+            .padding(.horizontal)
+
             Button(isRunning ? "Running..." : "Run Test") {
                 runConcurrencyTest()
             }
@@ -84,7 +99,7 @@ struct RaceConditionView: View {
 
             Spacer()
 
-            Text("Expected: 50 items added, then 25 removed = 25 items")
+            Text("Expected: \(addCount) added, \(removeCount) removed = \(expectedCount) items")
                 .font(.caption)
                 .foregroundColor(.secondary)
         }
@@ -100,8 +115,11 @@ struct RaceConditionView: View {
         let group = DispatchGroup()
         let concurrentQueue = DispatchQueue(label: "cart.concurrent", attributes: .concurrent)
 
+        let adds = addCount
+        let removes = removeCount
+
         // Simulate multiple threads adding items
-        for i in 0..<50 {
+        for i in 0..<adds {
             group.enter()
             concurrentQueue.async {
                 let product = products[i % products.count]
@@ -111,7 +129,7 @@ struct RaceConditionView: View {
         }
 
         // Simulate multiple threads removing items while adds are happening
-        for i in 0..<25 {
+        for i in 0..<removes {
             group.enter()
             concurrentQueue.async {
                 let product = products[i % products.count]
