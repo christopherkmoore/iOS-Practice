@@ -2,20 +2,29 @@
 
 Three Xcode projects designed for senior iOS interview preparation, covering concurrency bugs, SwiftUI development, and unit testing.
 
+**Requirements:** Xcode 15+, iOS 17+
+
 ---
 
 ## Quick Start
 
-### Project Setup
+```bash
+git clone https://github.com/christopherkmoore/iOS-Practice.git
+cd iOS-Practice
+```
 
-1. **Create three iOS App projects** in Xcode (iOS 17+, SwiftUI lifecycle):
-   - `ConcurrencyBugHunt`
-   - `SwiftUIBuilder`
-   - `TestabilityWorkshop` (check "Include Tests")
+Each project includes a pre-generated `.xcodeproj`. Open any project directly:
 
-2. **Add source files** by dragging each folder's contents into the corresponding Xcode project
+```bash
+open ConcurrencyBugHunt/ConcurrencyBugHunt.xcodeproj
+open SwiftUIBuilder/SwiftUIBuilder.xcodeproj
+open TestabilityWorkshop/TestabilityWorkshop.xcodeproj
+```
 
-3. **For TestabilityWorkshop**, add files from `TestabilityWorkshopTests/` to the test target (not main target)
+**Using xcodegen?** Each project also includes a `project.yml` for regeneration:
+```bash
+cd ConcurrencyBugHunt && xcodegen generate
+```
 
 ---
 
@@ -184,13 +193,15 @@ TestabilityWorkshopTests/
 
 ```bash
 # Open in Xcode
-open ConcurrencyBugHunt.xcodeproj
-open SwiftUIBuilder.xcodeproj
-open TestabilityWorkshop.xcodeproj
+open ConcurrencyBugHunt/ConcurrencyBugHunt.xcodeproj
+open SwiftUIBuilder/SwiftUIBuilder.xcodeproj
+open TestabilityWorkshop/TestabilityWorkshop.xcodeproj
 
 # Run tests (TestabilityWorkshop)
 # Cmd+U in Xcode, or:
-xcodebuild test -project TestabilityWorkshop.xcodeproj -scheme TestabilityWorkshop -destination 'platform=iOS Simulator,name=iPhone 15'
+xcodebuild test -project TestabilityWorkshop/TestabilityWorkshop.xcodeproj \
+  -scheme TestabilityWorkshop \
+  -destination 'platform=iOS Simulator,name=iPhone 15'
 ```
 
 ---
@@ -198,7 +209,7 @@ xcodebuild test -project TestabilityWorkshop.xcodeproj -scheme TestabilityWorksh
 ## File Structure
 
 ```
-practice/
+iOS-Practice/
 ├── README.md                          # This file
 ├── ConcurrencyBugHunt/
 │   ├── ConcurrencyBugHuntApp.swift
