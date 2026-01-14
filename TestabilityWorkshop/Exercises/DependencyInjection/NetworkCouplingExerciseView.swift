@@ -3,6 +3,9 @@ import Foundation
 
 // MARK: - Exercise: Decouple network layer for testability
 // The "Before" code makes real URLSession calls, making tests slow and flaky
+//
+// Try it yourself: Delete from line 91 (// MARK: - AFTER) onwards and refactor
+// ProductServiceBefore to be testable. Goal: make NetworkCouplingExerciseTests.swift pass.
 
 struct NetworkCouplingExerciseView: View {
     var body: some View {

@@ -3,6 +3,9 @@ import Foundation
 
 // MARK: - Exercise: Make date/time dependencies testable
 // Code that uses Date() directly is impossible to test deterministically
+//
+// Try it yourself: Delete from line 96 (// MARK: - AFTER) onwards and refactor
+// SubscriptionManagerBefore to be testable. Goal: make DateTimeExerciseTests.swift pass.
 
 struct DateTimeExerciseView: View {
     var body: some View {

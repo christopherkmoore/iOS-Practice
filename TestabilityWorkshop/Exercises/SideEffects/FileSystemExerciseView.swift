@@ -3,6 +3,9 @@ import Foundation
 
 // MARK: - Exercise: Make file system access testable
 // Direct FileManager access makes tests slow and requires cleanup
+//
+// Try it yourself: Delete from line 108 (// MARK: - AFTER) onwards and refactor
+// ImageCacheManagerBefore to be testable. Goal: make FileSystemExerciseTests.swift pass.
 
 struct FileSystemExerciseView: View {
     var body: some View {

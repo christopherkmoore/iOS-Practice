@@ -2,6 +2,9 @@ import SwiftUI
 
 // MARK: - Exercise: Refactor singleton dependencies for testability
 // The "Before" code directly accesses singletons, making it impossible to test in isolation
+//
+// Try it yourself: Delete from line 118 (// MARK: - AFTER) onwards and refactor
+// UserProfileManagerBefore to be testable. Goal: make SingletonExerciseTests.swift pass.
 
 struct SingletonExerciseView: View {
     var body: some View {

@@ -3,6 +3,9 @@ import Combine
 
 // MARK: - Exercise: Test ViewModels properly
 // Shows how to structure ViewModels for testability and how to test @Published properties
+//
+// Try it yourself: Delete from line 83 (// MARK: - AFTER) onwards and refactor
+// ArticleListViewModelBefore to be testable. Goal: make ViewModelExerciseTests.swift pass.
 
 struct ViewModelExerciseView: View {
     var body: some View {

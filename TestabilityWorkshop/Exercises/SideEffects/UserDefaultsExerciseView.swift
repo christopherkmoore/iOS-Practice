@@ -3,6 +3,9 @@ import Foundation
 
 // MARK: - Exercise: Make UserDefaults access testable
 // Direct UserDefaults access makes tests pollute shared state and affect other tests
+//
+// Try it yourself: Delete from line 91 (// MARK: - AFTER) onwards and refactor
+// OnboardingManagerBefore to be testable. Goal: make UserDefaultsExerciseTests.swift pass.
 
 struct UserDefaultsExerciseView: View {
     var body: some View {
