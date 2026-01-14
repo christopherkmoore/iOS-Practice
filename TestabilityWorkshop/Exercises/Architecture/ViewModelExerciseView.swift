@@ -39,7 +39,7 @@ struct ViewModelExerciseView: View {
 
 // MARK: - Domain Models
 
-struct Article: Identifiable, Equatable {
+struct Article: Identifiable, Equatable, Codable {
     let id: String
     let title: String
     let content: String
