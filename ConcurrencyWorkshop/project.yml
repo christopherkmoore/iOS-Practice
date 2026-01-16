@@ -1,0 +1,27 @@
+name: ConcurrencyWorkshop
+options:
+  bundleIdPrefix: com.deadpixel
+  deploymentTarget:
+    iOS: "17.0"
+  xcodeVersion: "15.0"
+
+targets:
+  ConcurrencyWorkshop:
+    type: application
+    platform: iOS
+    sources:
+      - ConcurrencyWorkshop
+    settings:
+      base:
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+        INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        SWIFT_EMIT_LOC_STRINGS: YES
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.deadpixel.ConcurrencyWorkshop
+        PRODUCT_NAME: "$(TARGET_NAME)"
+        SWIFT_VERSION: 5.0
+        TARGETED_DEVICE_FAMILY: "1,2"
+        DEVELOPMENT_TEAM: ""
