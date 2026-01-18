@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 // MARK: - Models
 
@@ -216,5 +217,3 @@ extension Color {
         }
     }
 }
-
-import SwiftUI

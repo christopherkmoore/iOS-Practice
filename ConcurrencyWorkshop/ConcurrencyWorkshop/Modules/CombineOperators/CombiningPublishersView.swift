@@ -5,6 +5,23 @@ import Combine
 // Learn combineLatest, merge, zip, and other combining operators
 
 struct CombiningPublishersView: View {
+    var body: some View {
+        ExerciseTabView(
+            tryItView: CombiningPublishersTryItView(),
+            learnView: QAListView(items: CombiningPublishersContent.qaItems),
+            codeView: CodeViewer(
+                title: "CombiningPublishersView.swift",
+                code: CombiningPublishersContent.sourceCode,
+                exercises: CombiningPublishersContent.exercises
+            )
+        )
+        .navigationTitle("Combining Publishers")
+    }
+}
+
+// MARK: - Try It Tab
+
+private struct CombiningPublishersTryItView: View {
     @StateObject private var viewModel = CombiningPublishersViewModel()
 
     var body: some View {
@@ -97,61 +114,23 @@ struct CombiningPublishersView: View {
                         .foregroundColor(.blue)
                 }
             }
-
-            Section("Code Examples") {
-                Text("""
-                // combineLatest - form validation
-                Publishers.CombineLatest3($email, $password, $terms)
-                    .map { email, password, terms in
-                        isValidEmail(email) && password.count >= 8 && terms
-                    }
-                    .assign(to: &$isFormValid)
-
-                // merge - multiple event sources
-                let allTaps = Publishers.Merge3(
-                    button1.publisher,
-                    button2.publisher,
-                    button3.publisher
-                )
-
-                // zip - parallel requests, need all results
-                Publishers.Zip(userPublisher, postsPublisher)
-                    .sink { user, posts in
-                        // Both completed
-                    }
-                """)
-                .font(.system(.caption2, design: .monospaced))
-            }
-
-            Section("When to Use Each") {
-                VStack(alignment: .leading, spacing: 8) {
-                    Group {
-                        Text("combineLatest").fontWeight(.bold) + Text(" - Form validation, derived state")
-                        Text("merge").fontWeight(.bold) + Text(" - Multiple event sources of same type")
-                        Text("zip").fontWeight(.bold) + Text(" - Pair values 1:1, parallel requests")
-                    }
-                    .font(.caption)
-                }
-            }
         }
-        .navigationTitle("Combining Publishers")
+        .scrollContentBackground(.hidden)
+        .background(Color(.systemBackground))
     }
 }
 
 // MARK: - ViewModel
 
 class CombiningPublishersViewModel: ObservableObject {
-    // combineLatest demo
     @Published var valueA = 5
     @Published var valueB = 3
     @Published var combinedLatestResult = 8
 
-    // merge demo
     @Published var mergedEvents: [String] = []
     private let streamA = PassthroughSubject<String, Never>()
     private let streamB = PassthroughSubject<String, Never>()
 
-    // zip demo
     @Published var zippedResult = ""
     @Published var zipXCount = 0
     @Published var zipYCount = 0
@@ -214,30 +193,6 @@ class CombiningPublishersViewModel: ObservableObject {
         zipY.send(yValues.last!)
     }
 }
-
-// MARK: - Additional Combining Operators
-
-/*
- // CombineLatest variants
- Publishers.CombineLatest(pub1, pub2)           // 2 publishers
- Publishers.CombineLatest3(pub1, pub2, pub3)    // 3 publishers
- Publishers.CombineLatest4(pub1, pub2, pub3, pub4)  // 4 publishers
-
- // Merge variants
- Publishers.Merge(pub1, pub2)        // 2 publishers
- Publishers.Merge3(pub1, pub2, pub3) // 3 publishers
- // ... up to Merge8, or use MergeMany for arrays
-
- // Zip variants
- Publishers.Zip(pub1, pub2)          // 2 publishers
- Publishers.Zip3(pub1, pub2, pub3)   // 3 publishers
- Publishers.Zip4(pub1, pub2, pub3, pub4)  // 4 publishers
-
- // Other useful combiners:
- publisher.append(otherPublisher)    // Emit from first, then second when first completes
- publisher.prepend(values)           // Emit values first, then publisher
- publisher.switchToLatest()          // For Publisher<Publisher<T>> - cancel old, use new
- */
 
 #Preview {
     NavigationStack {

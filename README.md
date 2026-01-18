@@ -1,6 +1,6 @@
 # iOS Interview Practice Projects
 
-Three Xcode projects designed for senior iOS interview preparation, covering concurrency bugs, SwiftUI development, and unit testing.
+Four Xcode projects designed for senior iOS interview preparation, covering concurrency patterns, SwiftUI development, unit testing, and advanced Swift concurrency.
 
 **Requirements:** Xcode 15+, iOS 17+
 
@@ -19,6 +19,7 @@ Each project includes a pre-generated `.xcodeproj`. Open any project directly:
 open ConcurrencyBugHunt/ConcurrencyBugHunt.xcodeproj
 open SwiftUIBuilder/SwiftUIBuilder.xcodeproj
 open TestabilityWorkshop/TestabilityWorkshop.xcodeproj
+open ConcurrencyWorkshop/ConcurrencyWorkshop.xcodeproj
 ```
 
 **Using xcodegen?** Each project also includes a `project.yml` for regeneration:
@@ -118,6 +119,34 @@ TestabilityWorkshopTests/
 
 ---
 
+### 4. ConcurrencyWorkshop
+
+**Purpose:** Deep-dive into Swift Concurrency and Combine with interactive learning
+
+**How to use:**
+- Each module has three tabs: **Try It** (interactive demo), **Learn** (Q&A), **Code** (full source)
+- Run the demos to see concurrency patterns in action
+- Study the Q&A section for conceptual understanding
+- Review the source code and try exercises
+
+| Section | Modules | Patterns Covered |
+|---------|---------|------------------|
+| **AsyncSequences** | Consuming AsyncSequence | `for await`, cancellation, breaking early |
+| | AsyncStream | `yield`, `finish`, `onTermination`, error handling |
+| | Bridging Delegates | Wrapping delegate APIs with continuations |
+| **Continuations** | Checked & Unsafe | `withCheckedContinuation`, timeout patterns, one-resume rule |
+| **Combine Operators** | Combining Publishers | `combineLatest`, `merge`, `zip` |
+| | Transforming Streams | `flatMap`, `switchToLatest`, schedulers |
+| **Sendable** | Thread Safety | `Sendable` protocol, `@unchecked Sendable`, crossing isolation |
+| **MainActor** | UI Patterns | `@MainActor`, `nonisolated`, Swift 6 strict concurrency |
+
+**Module Structure:**
+- Each view includes working code examples you can run
+- Q&A sections explain the "why" behind each pattern
+- Exercises challenge you to extend or modify the code
+
+---
+
 ## Topics Covered
 
 ### Concurrency
@@ -130,6 +159,12 @@ TestabilityWorkshopTests/
 - [x] Actor isolation and reentrancy
 - [x] Structured vs unstructured concurrency
 - [x] Combine: Publishers, Subscribers, `AnyCancellable`, retain cycles
+- [x] AsyncSequence and `for await` loops
+- [x] AsyncStream for bridging imperative code
+- [x] Continuations: `withCheckedContinuation`, `withUnsafeContinuation`
+- [x] `Sendable` protocol and thread-safe types
+- [x] `@MainActor` and UI isolation patterns
+- [x] Swift 6 strict concurrency preparation
 
 ### SwiftUI
 - [x] State management: `@State`, `@Binding`, `@StateObject`, `@ObservedObject`, `@EnvironmentObject`
@@ -196,6 +231,7 @@ TestabilityWorkshopTests/
 open ConcurrencyBugHunt/ConcurrencyBugHunt.xcodeproj
 open SwiftUIBuilder/SwiftUIBuilder.xcodeproj
 open TestabilityWorkshop/TestabilityWorkshop.xcodeproj
+open ConcurrencyWorkshop/ConcurrencyWorkshop.xcodeproj
 
 # Run tests (TestabilityWorkshop)
 # Cmd+U in Xcode, or:
@@ -227,15 +263,26 @@ iOS-Practice/
 │       ├── Grid/
 │       ├── Navigation/
 │       └── State/
-└── TestabilityWorkshop/
-    ├── TestabilityWorkshopApp.swift
+├── TestabilityWorkshop/
+│   ├── TestabilityWorkshopApp.swift
+│   ├── ContentView.swift
+│   ├── Exercises/
+│   │   ├── DependencyInjection/
+│   │   ├── SideEffects/
+│   │   ├── Architecture/
+│   │   └── Async/
+│   └── TestabilityWorkshopTests/
+│       ├── Mocks/TestMocks.swift
+│       └── *Tests.swift
+└── ConcurrencyWorkshop/
+    ├── ConcurrencyWorkshopApp.swift
     ├── ContentView.swift
-    ├── Exercises/
-    │   ├── DependencyInjection/
-    │   ├── SideEffects/
-    │   ├── Architecture/
-    │   └── Async/
-    └── TestabilityWorkshopTests/
-        ├── Mocks/TestMocks.swift
-        └── *Tests.swift
+    ├── Shared/                        # Reusable tab views, code viewer
+    ├── ModuleContent/                 # Q&A and exercise content
+    └── Modules/
+        ├── AsyncSequences/
+        ├── Continuations/
+        ├── CombineOperators/
+        ├── Sendable/
+        └── MainActor/
 ```

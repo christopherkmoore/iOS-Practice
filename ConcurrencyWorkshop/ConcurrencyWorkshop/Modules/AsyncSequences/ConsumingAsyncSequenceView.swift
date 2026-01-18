@@ -5,6 +5,23 @@ import Combine
 // Learn how to iterate over asynchronous sequences using for-await-in loops
 
 struct ConsumingAsyncSequenceView: View {
+    var body: some View {
+        ExerciseTabView(
+            tryItView: ConsumingAsyncSequenceTryItView(),
+            learnView: QAListView(items: ConsumingAsyncSequenceContent.qaItems),
+            codeView: CodeViewer(
+                title: "ConsumingAsyncSequenceView.swift",
+                code: ConsumingAsyncSequenceContent.sourceCode,
+                exercises: ConsumingAsyncSequenceContent.exercises
+            )
+        )
+        .navigationTitle("Consuming AsyncSequence")
+    }
+}
+
+// MARK: - Try It Tab
+
+private struct ConsumingAsyncSequenceTryItView: View {
     @State private var numbers: [Int] = []
     @State private var isRunning = false
     @State private var task: Task<Void, Never>?
@@ -15,16 +32,6 @@ struct ConsumingAsyncSequenceView: View {
                 Text("AsyncSequence is a protocol for sequences that deliver elements asynchronously. Use `for await` to consume them.")
                     .font(.caption)
                     .foregroundColor(.secondary)
-            }
-
-            Section("Key Concepts") {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("• `for await item in sequence` - iterate async")
-                    Text("• Suspends at each iteration until next value")
-                    Text("• Automatically handles cancellation")
-                    Text("• Works with any AsyncSequence type")
-                }
-                .font(.caption)
             }
 
             Section("Try It: Number Stream") {
@@ -59,18 +66,9 @@ struct ConsumingAsyncSequenceView: View {
                         .foregroundColor(.green)
                 }
             }
-
-            Section("Built-in AsyncSequences") {
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("• `URL.lines` - async lines from a file/URL")
-                    Text("• `FileHandle.bytes` - async byte stream")
-                    Text("• `NotificationCenter.notifications`")
-                    Text("• `URLSession.bytes(from:)` - streaming download")
-                }
-                .font(.caption)
-            }
         }
-        .navigationTitle("Consuming AsyncSequence")
+        .scrollContentBackground(.hidden)
+        .background(Color(.systemBackground))
         .onDisappear {
             task?.cancel()
         }
@@ -81,12 +79,10 @@ struct ConsumingAsyncSequenceView: View {
         numbers = []
 
         task = Task {
-            // Create a simple async sequence
             let stream = NumberStream(count: 10, delay: 0.5)
 
             do {
                 for try await number in stream {
-                    // Check cancellation
                     try Task.checkCancellation()
 
                     await MainActor.run {
@@ -141,7 +137,6 @@ class URLLinesDemo: ObservableObject {
         await MainActor.run { isLoading = true; lines = [] }
 
         do {
-            // url.lines is an AsyncSequence!
             for try await line in url.lines {
                 await MainActor.run {
                     lines.append(line)
@@ -154,22 +149,6 @@ class URLLinesDemo: ObservableObject {
         await MainActor.run { isLoading = false }
     }
 }
-
-// MARK: - NotificationCenter Example
-
-/*
- // NotificationCenter provides an AsyncSequence for notifications:
-
- func observeNotifications() async {
-     let notifications = NotificationCenter.default.notifications(
-         named: UIApplication.didBecomeActiveNotification
-     )
-
-     for await notification in notifications {
-         print("App became active: \(notification)")
-     }
- }
- */
 
 #Preview {
     NavigationStack {
