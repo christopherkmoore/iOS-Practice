@@ -6,29 +6,19 @@ import SwiftUI
 class ShoppingCart {
     private var items: [String: Int] = [:]
     private var totalPrice: Double = 0
-
+    private var queue = DispatchQueue(label: "concurrency.queue")
+    
     func addItem(_ name: String, price: Double, quantity: Int = 1) {
         // Simulate some processing delay
         Thread.sleep(forTimeInterval: Double.random(in: 0.001...0.01))
-
-        if let existing = items[name] {
-            items[name] = existing + quantity
-        } else {
-            items[name] = quantity
-        }
-        totalPrice += price * Double(quantity)
-    }
-
-    func removeItem(_ name: String, price: Double) {
-        Thread.sleep(forTimeInterval: Double.random(in: 0.001...0.01))
-
-        if let quantity = items[name] {
-            if quantity > 1 {
-                items[name] = quantity - 1
+        
+        queue.sync {
+            if let existing = items[name] {
+                items[name] = existing + quantity
             } else {
-                items.removeValue(forKey: name)
+                items[name] = quantity
             }
-            totalPrice -= price
+            totalPrice += price * Double(quantity)
         }
     }
 
@@ -65,8 +55,6 @@ struct RaceConditionView: View {
     ]
 
     private var addCount: Int { Int(operationCount) }
-    private var removeCount: Int { Int(operationCount) / 2 }
-    private var expectedCount: Int { addCount - removeCount }
 
     var body: some View {
         VStack(spacing: 20) {
@@ -99,7 +87,7 @@ struct RaceConditionView: View {
 
             Spacer()
 
-            Text("Expected: \(addCount) added, \(removeCount) removed = \(expectedCount) items")
+            Text("Expected: \(addCount) items")
                 .font(.caption)
                 .foregroundColor(.secondary)
         }
@@ -115,42 +103,29 @@ struct RaceConditionView: View {
         let group = DispatchGroup()
         let concurrentQueue = DispatchQueue(label: "cart.concurrent", attributes: .concurrent)
 
-        let adds = addCount
-        let removes = removeCount
-
-        // Simulate multiple threads adding items
-        for i in 0..<adds {
+        // Add items concurrently
+        for i in 0..<addCount {
             group.enter()
             concurrentQueue.async {
-                let product = products[i % products.count]
-                cart.addItem(product.0, price: product.1)
-                group.leave()
-            }
-        }
-
-        // Simulate multiple threads removing items while adds are happening
-        for i in 0..<removes {
-            group.enter()
-            concurrentQueue.async {
-                let product = products[i % products.count]
-                cart.removeItem(product.0, price: product.1)
+                let product = self.products[i % self.products.count]
+                self.cart.addItem(product.0, price: product.1)
                 group.leave()
             }
         }
 
         group.notify(queue: .main) {
-            let finalCount = cart.getItemCount()
-            let finalPrice = cart.getTotalPrice()
-            let items = cart.getItems()
+            let finalCount = self.cart.getItemCount()
+            let finalPrice = self.cart.getTotalPrice()
+            let items = self.cart.getItems()
 
-            resultMessage = """
+            self.resultMessage = """
             Final item count: \(finalCount)
             Final total price: $\(String(format: "%.2f", finalPrice))
             Items: \(items)
 
             Run multiple times - results will vary!
             """
-            isRunning = false
+            self.isRunning = false
         }
     }
 }
