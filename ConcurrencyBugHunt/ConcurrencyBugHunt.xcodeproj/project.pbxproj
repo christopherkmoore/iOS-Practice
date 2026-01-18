@@ -12,28 +12,30 @@
 		588A6DFBB0B0441596411918 /* TaskCancellationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C390ECC4329DC6FF28642945 /* TaskCancellationView.swift */; };
 		864D85ABE06F751593D7F67B /* UnstructuredTaskLeakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD9E5787BB947DDC1754526 /* UnstructuredTaskLeakView.swift */; };
 		88FCAD6929B8AAAEAF9EB1F4 /* MissingCancellableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EA6D6675FD2338F0D8718D /* MissingCancellableView.swift */; };
+		A0A5DC91F96F79C15E48737D /* LockPerformanceTestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A970763CAC1F3C9EC39CACF /* LockPerformanceTestsView.swift */; };
 		AF5EB954E53D13DB9010A5EF /* DeadlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6321691F4485F58EC9DC290E /* DeadlockView.swift */; };
 		B2D8BD4A912823ED009496ED /* ActorReentrancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CF56E8A59DBF759505B958 /* ActorReentrancyView.swift */; };
-		BFE18D0A1BF59387E795B684 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74D8ADF6E0A7CB53FBB2060 /* ContentView.swift */; };
-		C86E9A3DBDC4635117E92451 /* ConcurrencyBugHuntApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B928E8B709ED94296724F102 /* ConcurrencyBugHuntApp.swift */; };
+		D81BE41420A647385CBEC587 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BF664CE2ACC8A7AA973DEE /* ContentView.swift */; };
 		DC87095272715D4C22056518 /* RaceConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2EA2B0A9867248A76E9CF4 /* RaceConditionView.swift */; };
+		E5692C2D9EF147DEECBB6A1C /* ConcurrencyBugHuntApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6813FC763979ED0F2D2C7089 /* ConcurrencyBugHuntApp.swift */; };
 		FAD5711F20122CCDE3189FE5 /* PublisherRetainCycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBEA300A59A8E3DA981D718 /* PublisherRetainCycleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0FD9E5787BB947DDC1754526 /* UnstructuredTaskLeakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnstructuredTaskLeakView.swift; sourceTree = "<group>"; };
 		1A2EA2B0A9867248A76E9CF4 /* RaceConditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceConditionView.swift; sourceTree = "<group>"; };
+		24BF664CE2ACC8A7AA973DEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		29EA6D6675FD2338F0D8718D /* MissingCancellableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissingCancellableView.swift; sourceTree = "<group>"; };
 		4C30959302C47636C8F86102 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		51CF56E8A59DBF759505B958 /* ActorReentrancyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorReentrancyView.swift; sourceTree = "<group>"; };
 		5F6C834BBD8080060AD0A081 /* MainThreadViolationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainThreadViolationView.swift; sourceTree = "<group>"; };
 		6321691F4485F58EC9DC290E /* DeadlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlockView.swift; sourceTree = "<group>"; };
+		6813FC763979ED0F2D2C7089 /* ConcurrencyBugHuntApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrencyBugHuntApp.swift; sourceTree = "<group>"; };
 		83BF6FBCF8E00C95950B2A06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9A970763CAC1F3C9EC39CACF /* LockPerformanceTestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockPerformanceTestsView.swift; sourceTree = "<group>"; };
 		9CBEA300A59A8E3DA981D718 /* PublisherRetainCycleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherRetainCycleView.swift; sourceTree = "<group>"; };
-		B433FE5A81D027844737C822 /* ConcurrencyBugHunt.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ConcurrencyBugHunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B928E8B709ED94296724F102 /* ConcurrencyBugHuntApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrencyBugHuntApp.swift; sourceTree = "<group>"; };
+		B433FE5A81D027844737C822 /* ConcurrencyBugHunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConcurrencyBugHunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C390ECC4329DC6FF28642945 /* TaskCancellationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCancellationView.swift; sourceTree = "<group>"; };
-		F74D8ADF6E0A7CB53FBB2060 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -70,6 +72,7 @@
 				2C8D666E9117BFDED02B843D /* AsyncAwait */,
 				0EB462BEED68A367A6F9AE0E /* Combine */,
 				92DBD6ECAC8AACCAF568EED6 /* GCD */,
+				90EFA088B1E5994B7018128E /* Locks */,
 			);
 			path = Exercises;
 			sourceTree = "<group>";
@@ -95,12 +98,20 @@
 		720A0C3363BDE31FA8350A7F /* ConcurrencyBugHunt */ = {
 			isa = PBXGroup;
 			children = (
-				B928E8B709ED94296724F102 /* ConcurrencyBugHuntApp.swift */,
-				F74D8ADF6E0A7CB53FBB2060 /* ContentView.swift */,
+				6813FC763979ED0F2D2C7089 /* ConcurrencyBugHuntApp.swift */,
+				24BF664CE2ACC8A7AA973DEE /* ContentView.swift */,
 				4C30959302C47636C8F86102 /* Info.plist */,
 			);
 			name = ConcurrencyBugHunt;
 			path = .;
+			sourceTree = "<group>";
+		};
+		90EFA088B1E5994B7018128E /* Locks */ = {
+			isa = PBXGroup;
+			children = (
+				9A970763CAC1F3C9EC39CACF /* LockPerformanceTestsView.swift */,
+			);
+			path = Locks;
 			sourceTree = "<group>";
 		};
 		92DBD6ECAC8AACCAF568EED6 /* GCD */ = {
@@ -178,9 +189,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2D8BD4A912823ED009496ED /* ActorReentrancyView.swift in Sources */,
-				C86E9A3DBDC4635117E92451 /* ConcurrencyBugHuntApp.swift in Sources */,
-				BFE18D0A1BF59387E795B684 /* ContentView.swift in Sources */,
+				E5692C2D9EF147DEECBB6A1C /* ConcurrencyBugHuntApp.swift in Sources */,
+				D81BE41420A647385CBEC587 /* ContentView.swift in Sources */,
 				AF5EB954E53D13DB9010A5EF /* DeadlockView.swift in Sources */,
+				A0A5DC91F96F79C15E48737D /* LockPerformanceTestsView.swift in Sources */,
 				32DA811820C7936231A47257 /* MainThreadViolationView.swift in Sources */,
 				88FCAD6929B8AAAEAF9EB1F4 /* MissingCancellableView.swift in Sources */,
 				FAD5711F20122CCDE3189FE5 /* PublisherRetainCycleView.swift in Sources */,
@@ -199,6 +211,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6W97WT4N63;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_GENERATION_MODE = GeneratedFile;
@@ -283,6 +296,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6W97WT4N63;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_GENERATION_MODE = GeneratedFile;

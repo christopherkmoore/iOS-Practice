@@ -35,6 +35,12 @@ struct ContentView: View {
                     MissingCancellableView()
                 }
             }
+
+            Section("Locks & Performance") {
+                NavigationLink("Synchronization Primitives") {
+                    LockPerformanceTestsView()
+                }
+            }
         }
         .navigationTitle("Concurrency Bug Hunt")
     }
