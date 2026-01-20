@@ -44,6 +44,15 @@ struct ContentView: View {
                     AsyncTestingExerciseView()
                 }
             }
+
+            Section("Swift Testing Framework") {
+                NavigationLink("XCTest vs Swift Testing") {
+                    SwiftTestingIntroView()
+                }
+                NavigationLink("Advanced Features") {
+                    SwiftTestingFeaturesView()
+                }
+            }
         }
         .navigationTitle("Testability Workshop")
     }

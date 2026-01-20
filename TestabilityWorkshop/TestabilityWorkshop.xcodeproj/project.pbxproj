@@ -12,15 +12,19 @@
 		1A1926A8416B062719B4F25D /* ProtocolMockingExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667EC2025924CA40CE9FD53E /* ProtocolMockingExerciseView.swift */; };
 		2CF516F8505D199883A9BE8D /* ViewModelExerciseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B00C22CAC02EFE1B99E2FBC /* ViewModelExerciseTests.swift */; };
 		323AA57011C668EC57D15917 /* AsyncTestingExerciseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3A819C96A2B6231B1B185B /* AsyncTestingExerciseTests.swift */; };
+		37F4D893C71352E563583A54 /* SwiftTestingIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D2B750F1CC644EC8C689E3 /* SwiftTestingIntroView.swift */; };
 		380D740AAC131A830D03C8B8 /* SingletonExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1207F6EBC534A019E892FF6 /* SingletonExerciseView.swift */; };
 		53E067B7136D874B36B05FAC /* UserDefaultsExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDD3B5EBE84033CC5B913C9 /* UserDefaultsExerciseView.swift */; };
 		5B82566B053E814319DA3FDE /* AsyncTestingExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F6D6BE4197200A98190FB2 /* AsyncTestingExerciseView.swift */; };
 		5FCF40B24EA851D3C36F1679 /* FileSystemExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5166DE02B6A3A2E83AA0AFC /* FileSystemExerciseView.swift */; };
+		75D9F91AFCA04988F18D4E4B /* SwiftTestingFeaturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB43BA44BB39A9FEDC29AE /* SwiftTestingFeaturesView.swift */; };
 		7608B568D6BDDC705CEC4BCF /* SingletonExerciseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F999440597F5F56C75A33136 /* SingletonExerciseTests.swift */; };
 		944E5ED34CAD875B5B1C914D /* UserDefaultsExerciseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5E4B78375357C84D156CAB /* UserDefaultsExerciseTests.swift */; };
 		A560C0CC29049559782CE012 /* TestabilityWorkshopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5305181A558F0750FF2F2ADF /* TestabilityWorkshopApp.swift */; };
+		AC4010973290ABBC08FB7B12 /* SwiftTestingExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC07524CDE29979CC1DE8390 /* SwiftTestingExampleTests.swift */; };
 		BCB9331D301D682AAD7ADCDD /* ProtocolMockingExerciseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623023573D9983AF776DFD9D /* ProtocolMockingExerciseTests.swift */; };
 		C1B6DA7F2732ECB2B1789D13 /* ViewModelExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D733D4FBECF056A1505F61C1 /* ViewModelExerciseView.swift */; };
+		C2EF1C1C28709C4138838ED3 /* SwiftTestingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6DC215AF6DA825A1423A3C /* SwiftTestingHelpers.swift */; };
 		C39DDBFAC91B5D66DE130CD8 /* FileSystemExerciseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE295634EF99EEC755EBF54 /* FileSystemExerciseTests.swift */; };
 		EAE448A21E683E6069D65348 /* NetworkCouplingExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EA22D63BE32640B5CF9643 /* NetworkCouplingExerciseView.swift */; };
 		EBF5DEF4D8A79FFAAA4A9C25 /* NetworkCouplingExerciseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD5904A097B1FAB94D8B636 /* NetworkCouplingExerciseTests.swift */; };
@@ -42,6 +46,7 @@
 		4B50C98A245E5349EBC38304 /* TestMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMocks.swift; sourceTree = "<group>"; };
 		4DE295634EF99EEC755EBF54 /* FileSystemExerciseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemExerciseTests.swift; sourceTree = "<group>"; };
 		5305181A558F0750FF2F2ADF /* TestabilityWorkshopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestabilityWorkshopApp.swift; sourceTree = "<group>"; };
+		55FB43BA44BB39A9FEDC29AE /* SwiftTestingFeaturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTestingFeaturesView.swift; sourceTree = "<group>"; };
 		623023573D9983AF776DFD9D /* ProtocolMockingExerciseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolMockingExerciseTests.swift; sourceTree = "<group>"; };
 		667EC2025924CA40CE9FD53E /* ProtocolMockingExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolMockingExerciseView.swift; sourceTree = "<group>"; };
 		7B00C22CAC02EFE1B99E2FBC /* ViewModelExerciseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelExerciseTests.swift; sourceTree = "<group>"; };
@@ -49,6 +54,8 @@
 		89D4C740A2157ABD12406948 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8BD5904A097B1FAB94D8B636 /* NetworkCouplingExerciseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCouplingExerciseTests.swift; sourceTree = "<group>"; };
 		A273B505C7002CE6A245C556 /* TestabilityWorkshopTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = TestabilityWorkshopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3D2B750F1CC644EC8C689E3 /* SwiftTestingIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTestingIntroView.swift; sourceTree = "<group>"; };
+		AC07524CDE29979CC1DE8390 /* SwiftTestingExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTestingExampleTests.swift; sourceTree = "<group>"; };
 		AC3A819C96A2B6231B1B185B /* AsyncTestingExerciseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncTestingExerciseTests.swift; sourceTree = "<group>"; };
 		C5166DE02B6A3A2E83AA0AFC /* FileSystemExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemExerciseView.swift; sourceTree = "<group>"; };
 		D733D4FBECF056A1505F61C1 /* ViewModelExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelExerciseView.swift; sourceTree = "<group>"; };
@@ -56,6 +63,7 @@
 		E8F6D6BE4197200A98190FB2 /* AsyncTestingExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncTestingExerciseView.swift; sourceTree = "<group>"; };
 		E9EA22D63BE32640B5CF9643 /* NetworkCouplingExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCouplingExerciseView.swift; sourceTree = "<group>"; };
 		EE5E4B78375357C84D156CAB /* UserDefaultsExerciseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExerciseTests.swift; sourceTree = "<group>"; };
+		EE6DC215AF6DA825A1423A3C /* SwiftTestingHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTestingHelpers.swift; sourceTree = "<group>"; };
 		EF1DBCB8B0439DA946CD445F /* TestabilityWorkshop.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = TestabilityWorkshop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF46383BF9F8FC1A5BD599E7 /* DateTimeExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeExerciseView.swift; sourceTree = "<group>"; };
 		F1207F6EBC534A019E892FF6 /* SingletonExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonExerciseView.swift; sourceTree = "<group>"; };
@@ -73,11 +81,22 @@
 				8BD5904A097B1FAB94D8B636 /* NetworkCouplingExerciseTests.swift */,
 				623023573D9983AF776DFD9D /* ProtocolMockingExerciseTests.swift */,
 				F999440597F5F56C75A33136 /* SingletonExerciseTests.swift */,
+				AC07524CDE29979CC1DE8390 /* SwiftTestingExampleTests.swift */,
 				EE5E4B78375357C84D156CAB /* UserDefaultsExerciseTests.swift */,
 				7B00C22CAC02EFE1B99E2FBC /* ViewModelExerciseTests.swift */,
 				9D70646053D36E9AF742F174 /* Mocks */,
 			);
 			path = TestabilityWorkshopTests;
+			sourceTree = "<group>";
+		};
+		3E63978BA69ABBC3C65335F1 /* SwiftTesting */ = {
+			isa = PBXGroup;
+			children = (
+				55FB43BA44BB39A9FEDC29AE /* SwiftTestingFeaturesView.swift */,
+				EE6DC215AF6DA825A1423A3C /* SwiftTestingHelpers.swift */,
+				A3D2B750F1CC644EC8C689E3 /* SwiftTestingIntroView.swift */,
+			);
+			path = SwiftTesting;
 			sourceTree = "<group>";
 		};
 		8DA7A5BCF7C741F9698AFE75 = {
@@ -122,6 +141,7 @@
 				90CED795F1E8A8BAE09E3D1D /* Async */,
 				C22D17E9D560EB78EAD42B98 /* DependencyInjection */,
 				A04D8C6B19E8BEF7176E74B4 /* SideEffects */,
+				3E63978BA69ABBC3C65335F1 /* SwiftTesting */,
 			);
 			path = Exercises;
 			sourceTree = "<group>";
@@ -245,6 +265,9 @@
 				EAE448A21E683E6069D65348 /* NetworkCouplingExerciseView.swift in Sources */,
 				1A1926A8416B062719B4F25D /* ProtocolMockingExerciseView.swift in Sources */,
 				380D740AAC131A830D03C8B8 /* SingletonExerciseView.swift in Sources */,
+				75D9F91AFCA04988F18D4E4B /* SwiftTestingFeaturesView.swift in Sources */,
+				C2EF1C1C28709C4138838ED3 /* SwiftTestingHelpers.swift in Sources */,
+				37F4D893C71352E563583A54 /* SwiftTestingIntroView.swift in Sources */,
 				A560C0CC29049559782CE012 /* TestabilityWorkshopApp.swift in Sources */,
 				53E067B7136D874B36B05FAC /* UserDefaultsExerciseView.swift in Sources */,
 				C1B6DA7F2732ECB2B1789D13 /* ViewModelExerciseView.swift in Sources */,
@@ -261,6 +284,7 @@
 				EBF5DEF4D8A79FFAAA4A9C25 /* NetworkCouplingExerciseTests.swift in Sources */,
 				BCB9331D301D682AAD7ADCDD /* ProtocolMockingExerciseTests.swift in Sources */,
 				7608B568D6BDDC705CEC4BCF /* SingletonExerciseTests.swift in Sources */,
+				AC4010973290ABBC08FB7B12 /* SwiftTestingExampleTests.swift in Sources */,
 				0D56DBA21B345C60BC20742E /* TestMocks.swift in Sources */,
 				944E5ED34CAD875B5B1C914D /* UserDefaultsExerciseTests.swift in Sources */,
 				2CF516F8505D199883A9BE8D /* ViewModelExerciseTests.swift in Sources */,

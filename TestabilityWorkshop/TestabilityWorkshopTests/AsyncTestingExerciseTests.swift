@@ -1,5 +1,20 @@
 import XCTest
+import Testing
 @testable import TestabilityWorkshop
+
+struct WeatherManagerTestsTesting {
+    
+    @Test("GET Weather calls service")
+    func getWeatherCallsService() async throws {
+        let mockService = MockWeatherService()
+        let sut = WeatherManager(service: mockService, cacheExpirationSeconds: 300)
+        
+        _ = try await sut.getWeather(for: "London")
+        
+        XCTAssertEqual(mockService.fetchCurrentWeatherCallCount, 1)
+    }
+}
+
 
 final class WeatherManagerTests: XCTestCase {
 
